@@ -78,7 +78,7 @@ class App:
                     elif option == '3': #BORRAR DATOS DE CUENTA
                         if delete_account(self):
                             save_data(self)
-                            app.start_app()
+                            main()
                         '''SE LLAMA A SI MISMA PARA VOLVER A INICIAR EL PROGRAMA, YA QUE NO HAY UNA SESION GUARDADA'''
                     elif option == '4': #VOLVER AL MENU PRINCIPAL
                         break
@@ -139,7 +139,11 @@ class App:
                 print('\n           Ingreso invalido!!!❌')
                 print('\n           Seleccione una opcion del Menu(1-6)')
 
-app = App()
-app.start_app()
+
+def main():
+    app = App()
+    app.start_app()
+
+main()
 
     
