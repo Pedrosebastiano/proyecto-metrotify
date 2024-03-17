@@ -140,7 +140,7 @@ def change_info(self, list):
                             3. Username
                             >>>'''))
             if option == 1:
-                name = input('             Ingrese su nombre o nombre artistico: ')
+                name = input('             Ingrese su nombre o nombre artistico: ').title()
                 if not(all(word.isalpha() or ' ' in word for word in name.split())):
                     raise Exception
                 list[-1].name = name
@@ -194,9 +194,9 @@ def delete_account(self):
                                 self.db_albums.remove(song)
             elif self.db_users[-1].type == "listener":
                 self.db_listeners.pop(-1)
-                for playlist in self.db_playlist:
+                for playlist in self.db_playlists:
                     if playlist.creator == id_to_delete:
-                        self.db_playlist.remove(playlist)
+                        self.db_playlists.remove(playlist)
             self.db_users.pop(-1)
             for like in self.db_likes:
                 if id_to_delete == like.id_user:
