@@ -56,7 +56,7 @@ class App:
 
             if option == "1": #DESCARGAR API
                 get_apidata()
-                self.db_users, self.db_musicians, self.db_listeners, self.db_albums, self.db_playlists, self.db_songs, self.db_likes = read_files()
+                main()            
             elif option == "2": #FUNCIONES DE GESTION DE PERFIL
                 while True:
 
